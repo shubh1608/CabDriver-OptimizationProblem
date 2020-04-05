@@ -70,7 +70,7 @@ class CabDriver():
             return -C
 
         reward = R*(Time_matrix[action[0]][action[1]][state[1]][state[2]]) - C*(Time_matrix[action[0]][action[1]][state[1]][state[2]] + Time_matrix[state[0]][action[0]][state[1]][state[2]])
-        return reward
+        return int(reward)
 
     def next_state_func(self, state, action, Time_matrix):
         """Takes state and action as input and returns next state"""
@@ -95,4 +95,5 @@ class CabDriver():
 
     def reset(self):
         return self.action_space, self.state_space, self.state_init
+
 
